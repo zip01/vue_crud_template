@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="table-container">
         <el-table stripe border
                   :data="data"
                   v-loading="loading"
@@ -10,38 +10,7 @@
                     <el-button @click="deleteRow(scope.row)" type="text" size="small">删除</el-button>
                 </template>
             </el-table-column>
-            <el-table-column prop="shopId"
-                             label="彩店"
-                             width="150">
-                <template slot-scope="scope">
-                    {{renderShop(scope.row.shopId)}}
-                </template>
-            </el-table-column>
-            <el-table-column prop="bankcardNo"
-                             label="卡号"
-                             width="200">
-            </el-table-column>
-            <el-table-column prop="status"
-                             label="状态"
-                             width="150">
-                <template slot-scope="scope">
-                    <span v-if="scope.row.status == 1" class="success">有效</span>
-                    <span v-if="scope.row.status == 0" class="danger">无效</span>
-                </template>
-            </el-table-column>
-            <el-table-column prop="defaultStatus"
-                             label="是否默认配置"
-                             width="150">
-                <template slot-scope="scope">
-                    <span v-if="scope.row.defaultStatus == 1" class="success">是</span>
-                    <span v-if="scope.row.defaultStatus == 0" >否</span>
-                </template>
-            </el-table-column>
-            <el-table-column prop="bankName"
-                             label="银行名称"
-                             width="150">
-            </el-table-column>
-            <el-table-column prop="bankcardUsername"
+            <el-table-column prop="userName"
                              label="用户名"
                              width="150">
             </el-table-column>
@@ -59,15 +28,17 @@
             </el-table-column>
 
         </el-table>
-            <el-pagination
-                    @size-change="handleSizeChange"
-                    @current-change="handleCurrentChange"
-                    :current-page="pageInfo.page"
-                    :page-sizes="[10, 20, 30]"
-                    :page-size="pageInfo.limit"
-                    layout="total, sizes, prev, pager, next, jumper"
-                    :total="pageInfo.total">
-            </el-pagination>
+        <div class="page-container">
+          <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page="pageInfo.page"
+              :page-sizes="[10, 20, 30]"
+              :page-size="pageInfo.limit"
+              layout="total, sizes, prev, pager, next, jumper"
+              :total="pageInfo.total">
+          </el-pagination>
+        </div>
     </div>
 </template>
 <script>
@@ -84,7 +55,12 @@
         data () {
             return {
                 loading: false,
-                data: [],
+                data: [{
+                  userName:'Tom',
+                  comment: 'xx',
+                  createTime: '2020-10-10',
+                  updateTime: '2020-10-10'
+                }],
                 pageInfo: {
                     page: 1,
                     limit: 10,

@@ -14,7 +14,6 @@ module.exports = {
   // 设置config文件夹index.js中productionSourceMap的值为false，也就是设置webpack配置中devtool为false，打包后文件体积可以减少百分之八十！！！！！！！
   // 14m -> 4m
   productionSourceMap: false,
-  outputDir: '../jdd_ydian_admin/src/main/resources/web/templates/dist',
   // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
   chainWebpack: config => {
     // 解决 cli3 热更新失效 https://github.com/vuejs/vue-cli/issues/1559

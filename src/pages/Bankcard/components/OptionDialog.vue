@@ -76,8 +76,8 @@
                 </el-form-item>
             </el-col>
             <el-col :span="12">
-                <el-form-item label="用户名" prop="bankcardUsername">
-                    <el-input v-model="ent.bankcardUsername"></el-input>
+                <el-form-item label="用户名" prop="userName">
+                    <el-input v-model="ent.userName"></el-input>
                 </el-form-item>
             </el-col>
             <el-col :span="12">
