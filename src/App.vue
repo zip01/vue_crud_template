@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <Bankcard/>
+    <Hello msg="message1"/>
+    <Hello msg="message2"/>
+    <Bankcard />
   </div>
 </template>
 
 <script>
-import Bankcard from './pages/Bankcard'
-
+import Bankcard from "./pages/Bankcard";
 export default {
   name: 'App',
-  components: {
-    Bankcard
-  }
+  components: {Bankcard}
 }
 </script>
 
